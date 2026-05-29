@@ -29,9 +29,23 @@
     </ul>
   </nav>
 
+  <!-- ===================== SİNEMATİK PERDE ===================== -->
+  <div class="curtain-top" id="curtainTop"></div>
+  <div class="curtain-bottom" id="curtainBottom"></div>
+
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
     <canvas id="lightCanvas"></canvas>
+
+    <!-- Sinematik gradient arka plan -->
+    <div class="hero-cinematic-bg"></div>
+
+    <!-- Kendi showreel videonunu videos/showreel.mp4 olarak ekle -->
+    <!--
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/showreel.mp4" type="video/mp4">
+    </video>
+    -->
 
     <div class="hero-overlay"></div>
 
@@ -62,6 +76,9 @@
       <span class="scroll-line"></span>
       <span class="scroll-label">Kaydır</span>
     </div>
+
+    <!-- Parallax katmanı -->
+    <div class="hero-parallax-layer" id="heroParallax"></div>
   </section>
 
   <!-- ===================== SERVICES ===================== -->

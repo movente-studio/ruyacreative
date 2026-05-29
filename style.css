@@ -806,3 +806,100 @@ textarea, input { font-family: inherit; }
   position: relative;
   overflow: hidden; /* Taşmaları engellemek için */
 }
+
+/* ============================================================
+   SİNEMATİK PERDE AÇILIŞI — Film Curtain Animation
+   ============================================================ */
+
+/* Perde bantları */
+.curtain-top,
+.curtain-bottom {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background: #000;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform 2.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.curtain-top    { top: 0;    transform: translateY(0); }
+.curtain-bottom { bottom: 0; transform: translateY(0); }
+
+.curtain-top.open    { transform: translateY(-100%); }
+.curtain-bottom.open { transform: translateY(100%); }
+
+.curtain-top.gone,
+.curtain-bottom.gone { display: none; }
+
+/* Sinematik gradient arka plan */
+.hero-cinematic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(201,169,110,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(180,140,80,0.05) 0%, transparent 50%),
+    linear-gradient(160deg, #0e0b06 0%, #080808 40%, #0a0a0f 100%);
+  animation: cinematicPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes cinematicPulse {
+  0%   { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+/* Letterbox bantları — sinema formatı */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: clamp(24px, 4vw, 48px);
+  background: #000;
+  z-index: 3;
+  transform: scaleY(0);
+}
+
+.hero::before { top: 0;    transform-origin: top; }
+.hero::after  { bottom: 0; transform-origin: bottom; }
+
+.hero.letterbox-on::before,
+.hero.letterbox-on::after {
+  transform: scaleY(1);
+  transition: transform 1.0s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Parallax katmanı */
+.hero-parallax-layer {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 40% 30% at 70% 30%, rgba(201,169,110,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 30% 60%, rgba(120,80,20,0.03) 0%, transparent 60%);
+  will-change: transform;
+}
+
+/* Scroll hint animasyonu */
+.hero-scroll-hint {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  transition-delay: 4.0s;
+}
+
+.hero-scroll-hint.visible {
+  opacity: 1;
+}
+
+/* Video arka plan (ileride kullanım için) */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 0;
+}
