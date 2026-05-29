@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rüya Creative Ajans — Sinematik Dijital Deneyim</title>
+  <meta name="description" content="Rüya Creative Ajans — Hikayeleri Sinematik Gerçekliğe Dönüştürüyoruz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-text">Rüya</span>
+      <span class="logo-sub">Creative Ajans</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link" data-cursor="link">Ana Sayfa</a></li>
+      <li><a href="#services" class="nav-link" data-cursor="link">Hizmetler</a></li>
+      <li><a href="#contact" class="nav-link" data-cursor="link">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <canvas id="lensCanvas"></canvas>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content" id="heroContent">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text reveal-word">Sinematik Dijital Deneyim</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="split-line">
+          <span class="split-inner reveal-line">Rüya Creative</span>
+        </span>
+        <span class="split-line">
+          <span class="split-inner reveal-line delay-1">Ajans</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle reveal-fade delay-2">
+        Hikayeleri Sinematik Gerçekliğe<br />Dönüştürüyoruz.
+      </p>
+      <div class="hero-cta reveal-fade delay-3">
+        <a href="#services" class="btn-primary" data-cursor="link">Keşfet</a>
+        <a href="#contact" class="btn-ghost" data-cursor="link">İletişime Geç</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Kaydır</span>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <span class="section-tag reveal-word">Ne Yapıyoruz</span>
+      <h2 class="section-title">
+        <span class="split-line"><span class="split-inner reveal-line">Hizmetlerimiz</span></span>
+      </h2>
+      <p class="section-desc reveal-fade">Her projeye özgün bir vizyon ve sinematik bir dokunuş katıyoruz.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">01</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="32" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M36 18l8-4v20l-8-4V18z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="20" cy="24" r="5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Belgesel Çekimi</h3>
+        <p class="card-desc">Gerçek hikayeleri duygu yüklü görsellerle ölümsüzleştiriyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">02</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 36V18a4 4 0 014-4h28a4 4 0 014 4v18" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 36h44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 28l-4-4 4-4M30 20l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Mekan Tanıtımı</h3>
+        <p class="card-desc">Mimari güzellikleri ve mekânların özünü Sinematik bir dille aktarıyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">03</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="8" width="28" height="32" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M16 20h16M16 26h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Ürün Tanıtımı</h3>
+        <p class="card-desc">Ürünlerinizi en çarpıcı açılardan, premium bir estetikle sunuyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">04</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 38V20l16-10 16 10v18" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="18" y="28" width="12" height="10" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M24 10v4M14 15l2 3M34 15l-2 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Reklam Çekimi</h3>
+        <p class="card-desc">Markanızın sesini güçlü, yaratıcı ve akılda kalıcı reklam filmlerine dönüştürüyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">05</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 24h32M24 8c-4 6-6 10-6 16s2 10 6 16M24 8c4 6 6 10 6 16s-2 10-6 16" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Dış Çekim</h3>
+        <p class="card-desc">Doğanın ve kentsel dokuların büyüleyici görsellerini çerçeveliyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">06</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="36" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M16 34v4M32 34v4M10 38h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 22c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Sosyal Medya Yönetimi</h3>
+        <p class="card-desc">İçerik stratejisinden görsel kimliğe, dijital varlığınızı profesyonelce yönetiyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="service-card service-card--wide" data-cursor="link">
+        <div class="card-glow"></div>
+        <div class="card-number">07</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M16 36v4M32 36v4M10 40h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 18h6M10 23h12M10 28h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="26" y="14" width="12" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Kurumsal & E-Ticaret Site Tasarımı</h3>
+        <p class="card-desc">Markanızın kimliğini yansıtan, kullanıcı odaklı ve yüksek dönüşümlü web siteleri tasarlıyoruz.</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-tag reveal-word">Bize Ulaşın</span>
+        <h2 class="section-title">
+          <span class="split-line"><span class="split-inner reveal-line">Projenizi</span></span>
+          <span class="split-line"><span class="split-inner reveal-line delay-1">Hayata</span></span>
+          <span class="split-line"><span class="split-inner reveal-line delay-2">Geçirelim.</span></span>
+        </h2>
+        <p class="contact-tagline reveal-fade delay-3">
+          Hayalinizdeki projeyi birlikte sinematik bir gerçekliğe dönüştürelim.
+        </p>
+        <div class="contact-socials reveal-fade delay-3">
+          <a href="https://www.instagram.com/ruya_creative/" target="_blank" rel="noopener noreferrer" class="social-badge" data-cursor="link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+            <span>@ruya_creative</span>
+          </a>
+          <a href="https://wa.me/905078366954" target="_blank" rel="noopener noreferrer" class="social-badge" data-cursor="link" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>+90 507 836 6954</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <form
+          name="iletisim"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="contact-form"
+          id="contactForm"
+        >
+          <input type="hidden" name="form-name" value="iletisim" />
+          <p style="display:none"><input name="bot-field" /></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ad">Ad</label>
+              <input type="text" id="ad" name="ad" placeholder="Adınız" required />
+            </div>
+            <div class="form-group">
+              <label for="soyad">Soyad</label>
+              <input type="text" id="soyad" name="soyad" placeholder="Soyadınız" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tel">Tel No</label>
+            <input type="tel" id="tel" name="tel" placeholder="+90 5xx xxx xx xx" />
+          </div>
+
+          <div class="form-group">
+            <label for="mesaj">Mesajınız</label>
+            <textarea id="mesaj" name="mesaj" rows="5" placeholder="Projeniz hakkında bize anlatın..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" data-cursor="link">
+            <span class="btn-submit-text">Mesaj Gönder</span>
+            <span class="btn-submit-arrow">→</span>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mesajınız iletildi. En kısa sürede dönüş yapacağız.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Rüya</span>
+        <span class="logo-sub">Creative Ajans</span>
+      </div>
+      <p class="footer-copy">© 2025 Rüya Creative Ajans. Tüm hakları saklıdır.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ruya_creative/" target="_blank" rel="noopener noreferrer" class="footer-social" data-cursor="link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://wa.me/905078366954" target="_blank" rel="noopener noreferrer" class="footer-social" data-cursor="link" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905078366954" target="_blank" rel="noopener noreferrer" class="whatsapp-float" id="whatsappFloat" data-cursor="link" aria-label="WhatsApp ile iletişime geç">
+    <div class="whatsapp-pulse"></div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="whatsapp-tooltip">Bize Yazın</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
