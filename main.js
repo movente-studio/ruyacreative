@@ -250,3 +250,32 @@
   }
 
 })();
+const canvas = document.getElementById('lightCanvas');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+let time = 0;
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let grad = ctx.createRadialGradient(
+    canvas.width/2 + Math.sin(time) * 150, 
+    canvas.height/2 + Math.cos(time) * 100, 
+    0, 
+    canvas.width/2, 
+    canvas.height/2, 
+    canvas.width * 0.7
+  );
+  grad.addColorStop(0, 'rgba(212, 175, 55, 0.12)'); // Altın yansıma
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  time += 0.005; // Daha yavaş, daha sinematik akış
+  requestAnimationFrame(animate);
+}
+animate();
