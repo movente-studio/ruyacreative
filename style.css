@@ -789,3 +789,20 @@ textarea, input { font-family: inherit; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+#lightCanvas {
+  position: absolute; /* Hero'nun içinde kalması için absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Ekranı tam kaplasın */
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Mevcut hero section'ın overflow özelliğini kontrol et */
+.hero {
+  position: relative;
+  overflow: hidden; /* Taşmaları engellemek için */
+}
