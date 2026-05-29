@@ -791,17 +791,18 @@ textarea, input { font-family: inherit; }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
 #lightCanvas {
-  position: absolute;
-  inset: 0;
+  position: absolute; /* Hero'nun içinde kalması için absolute */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Ekranı tam kaplasın */
   z-index: 0;
-  pointer-events: none; /* Mouse ile etkileşimi engelleme */
-  opacity: 0.8;
+  pointer-events: none;
+  opacity: 0.6;
 }
 
-/* Hero içeriğinin ışığın üzerinde görünmesi için */
-.hero-content {
+/* Mevcut hero section'ın overflow özelliğini kontrol et */
+.hero {
   position: relative;
-  z-index: 2;
+  overflow: hidden; /* Taşmaları engellemek için */
 }
