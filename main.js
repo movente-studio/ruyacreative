@@ -2,6 +2,79 @@
    main.js — Rüya Creative Ajans
    ============================================================ */
 
+/* ============================================================
+   SİNEMATİK PERDE AÇILIŞI — Film Curtain Animation
+   ============================================================ */
+(function initCurtain() {
+  const curtainTop    = document.getElementById('curtainTop');
+  const curtainBottom = document.getElementById('curtainBottom');
+  const hero          = document.querySelector('.hero');
+  const scrollHint    = document.querySelector('.hero-scroll-hint');
+  const heroParallax  = document.getElementById('heroParallax');
+
+  if (!curtainTop || !curtainBottom || !hero) return;
+
+  function startCurtain() {
+    // 1. Letterbox bantları — sinema formatı
+    hero.classList.add('letterbox-on');
+
+    // 2. Perdeler açılır
+    setTimeout(() => {
+      curtainTop.classList.add('open');
+      curtainBottom.classList.add('open');
+    }, 600);
+
+    // 3. Hero metin animasyonları tetiklenir
+    setTimeout(() => {
+      document.querySelectorAll(
+        '.hero-content .split-line, .hero-content .reveal-word, .hero-content .reveal-fade'
+      ).forEach(el => el.classList.add('is-visible'));
+    }, 1800);
+
+    // 4. Scroll hint görünür
+    setTimeout(() => {
+      if (scrollHint) scrollHint.classList.add('visible');
+    }, 4000);
+
+    // 5. Perdeler DOM'dan temizlenir
+    setTimeout(() => {
+      curtainTop.classList.add('gone');
+      curtainBottom.classList.add('gone');
+    }, 3200);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startCurtain);
+  } else {
+    startCurtain();
+  }
+
+  // Parallax scroll efekti
+  if (heroParallax) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const heroH   = hero.offsetHeight;
+          if (scrollY <= heroH) {
+            const pct = scrollY / heroH;
+            heroParallax.style.transform = `translateY(${scrollY * 0.3}px)`;
+            const content = document.getElementById('heroContent');
+            if (content) {
+              content.style.transform = `translateY(${scrollY * 0.15}px)`;
+              content.style.opacity   = `${1 - pct * 1.5}`;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+})();
+
 (function () {
   'use strict';
 
@@ -154,9 +227,7 @@
   document.querySelectorAll('.reveal-line, .reveal-word, .reveal-fade, .split-line').forEach(el => revealObs.observe(el));
   document.querySelectorAll('.service-card').forEach((card, i) => { card.style.transitionDelay = `${i * 0.08}s`; cardObs.observe(card); });
 
-  setTimeout(() => {
-    document.querySelectorAll('.hero-content .split-line, .hero-content .reveal-word, .hero-content .reveal-fade').forEach(el => el.classList.add('is-visible'));
-  }, 200);
+  // Hero animations — perde açılışı tarafından yönetiliyor (initCurtain)
 
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
